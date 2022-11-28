@@ -1,3 +1,5 @@
 const {queryResolver} = require("./query.resolver");
 
-exports.resolvers = {queryResolver}
+exports.resolvers = {
+    ...queryResolver
+}
