@@ -1,1 +1,5 @@
-export * from "./tracks.api";
+const TrackAPI = require("./tracks.api");
+
+module.exports = {
+    TrackAPI
+}
