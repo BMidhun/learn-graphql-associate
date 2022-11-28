@@ -6,13 +6,13 @@ const mocks = {
 
         id: () => "track_01",
         title: () => "Space Kitties",
-        thumbnail: () => "https://img.url.com/1",
+        thumbnail: () => "https://cataas.com/cat?width=300&&height=300",
         modulesCount:() => 3,
         length: () => 112,
         author: () => ({
 
             name:  "Stephen",
-            photo: "https://img.url.com/12"
+            photo: "https://joeschmoe.io/api/v1/random"
         })
 
     })
