@@ -29,11 +29,12 @@ function Home() {
   console.log({data});
 
   return <QueryResult data={data} error={error?.message} loading={loading}>
-            <Row gutter={2} wrap>
+            <Row gutter={[16,24]} wrap style={{margin:"0 auto"}}>
             {data?.tracksForHome?.map((_track) => {
-               return <Col span={4}><TrackComponent track={_track} /></Col>
+               return <Col ><TrackComponent track={_track} /></Col>
             })}
             </Row>
+          
       
         </QueryResult>
 }

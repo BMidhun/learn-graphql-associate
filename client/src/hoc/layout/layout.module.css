@@ -1,0 +1,24 @@
+.layout{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.layoutHeader{
+    background: #ebebeb !important;
+    align-items: center;
+    display: flex;
+    box-shadow: 1px 1px 1px 1px #f312b22b;
+}
+
+.layoutContent{
+    flex-grow: 1;
+    padding: 1rem;
+    overflow: auto;
+}
+
+.layoutFooter {
+    background-color: #ebebeb;
+    text-align: center;
+    box-shadow: 1px 1px 1px 1px #f312b3c0;
+}

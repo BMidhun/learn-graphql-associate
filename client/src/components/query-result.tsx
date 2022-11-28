@@ -1,7 +1,6 @@
-import { Alert, Layout, Spin } from 'antd'
+import { Alert, Spin } from 'antd'
 import { ReactNode } from 'react';
 
-const { Content } = Layout;
 
 interface IProps<T> {
     data: T,
@@ -38,11 +37,11 @@ function QueryResult<T>({ data, loading, error="", children }: IProps<T>) {
 
 
     return (
-        <Content>
+        <div>
             {
                 renderContent(data,loading,error,children)
             }
-        </Content>
+        </div>
     )
 }
 

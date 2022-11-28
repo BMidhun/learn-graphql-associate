@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
-import LayoutHOC from './hoc/layout.hoc'
+import LayoutHOC from './hoc/layout/layout.hoc'
 import Home from './pages/home'
 
 function AppRoutes() {

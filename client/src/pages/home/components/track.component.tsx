@@ -14,7 +14,7 @@ function TrackComponent(props:IProps) {
     const {track:{author:{name:authorName,photo}, id,length,modulesCount,thumbnail,title}} = props
 
     return (
-        <Card style={{ width: "300px" }} cover={<img src={thumbnail} alt="image not available"></img>} hoverable key={id}>
+        <Card style={{ width: 400 }} cover={<img src={thumbnail} alt="image not available"></img>} hoverable key={id}>
             <Meta title={title} description={
                 <Content>
                 <Space align='start'>
