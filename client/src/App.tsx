@@ -1,11 +1,19 @@
-import {Layout} from "antd";
+import {ApolloClient, InMemoryCache, ApolloProvider} from "@apollo/client"
+
 import AppRoutes from "./app-routes";
 
+const apolloClientConfig = new ApolloClient({
+  uri:"http://localhost:4000",
+  cache: new InMemoryCache()
+})
 
 function App() {
 
   return (
-    <AppRoutes />
+    <ApolloProvider client={apolloClientConfig}>
+      <AppRoutes />
+    </ApolloProvider>
+
   )
 }
 
