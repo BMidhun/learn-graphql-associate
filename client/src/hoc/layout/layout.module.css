@@ -9,6 +9,7 @@
     align-items: center;
     display: flex;
     box-shadow: 1px 1px 1px 1px #f312b22b;
+    z-index: 1000;
 }
 
 .layoutContent {
@@ -17,11 +18,7 @@
     height: 100%;
     overflow: auto;
    
-    /* background-image: url("https://img.freepik.com/free-vector/earth-view-night-from-alien-planet-neon-space_33099-1876.jpg?w=2000");
-    background: rgb(36, 0, 13); */
-    background: linear-gradient(90deg, rgba(36, 0, 13, 1) 0%, rgba(121, 9, 100, 1) 35%, rgba(154, 3, 67, 1) 100%) ,url("https://img.freepik.com/free-vector/earth-view-night-from-alien-planet-neon-space_33099-1876.jpg?w=2000") ;
-    background-size:cover;
-    background-blend-mode: multiply;
+
 }
 
 .layoutFooter {
