@@ -3,6 +3,12 @@ exports.queryResolver = {
         tracksForHome: (parent, args, context, info) => {
             const {dataSources} = context;
             return dataSources.trackAPI.getTracksForHome();
+        },
+
+        track : (_, args, context) => {
+            const {dataSources} = context;
+            const {id} = args;
+            return dataSources.trackAPI.getTrack(id);
         }
     },
 
@@ -12,6 +18,13 @@ exports.queryResolver = {
             const {dataSources} = context;
 
             return dataSources.trackAPI.getAuthor(authorId);
+        },
+
+        modules: (parent, _, context) => {
+            const {dataSources} = context;
+            const {id} = parent;
+            
+            return dataSources.trackAPI.getModules(id);
         }
     }   
 }

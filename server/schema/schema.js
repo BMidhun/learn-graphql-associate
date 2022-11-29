@@ -56,6 +56,7 @@ type Author {
 
 
 type Query {
+    "Tracks to populate the homepage of the application"
     tracksForHome : [Track!]!
 
     "track resolver accepts id as an argument and returns the corresponding Track. If the track doesn't exist for the provided id, then null can be returned"
