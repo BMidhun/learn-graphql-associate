@@ -7,8 +7,8 @@ import TrackComponent from './components/track.component';
 const TRACKS = gql`
 query TracksForHome {
   tracksForHome {
-    id,
-    title,
+    id
+    title
     thumbnail
     modulesCount
     length

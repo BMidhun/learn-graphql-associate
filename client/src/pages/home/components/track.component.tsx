@@ -31,22 +31,6 @@ function TrackComponent(props:IProps) {
           
                 </Content> 
             }/>
-            {/* <Title level={4}>Astro Kitty</Title>
-            <Divider></Divider>
-            <Content>
-            <Space align='start'>
-            <Avatar src="https://joeschmoe.io/api/v1/random" size={50} />
-                <Space direction="vertical">
-                    <Text strong>Midhun Baby</Text>
-                    <Space >
-                    <Text type='secondary'>6 modules</Text>
-                    <Text type='secondary'>11 min</Text>
-                    </Space>
-
-                </Space>
-            </Space>
-      
-            </Content> */}
         </Card>
     )
 }
