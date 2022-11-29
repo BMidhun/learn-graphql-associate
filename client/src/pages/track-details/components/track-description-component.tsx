@@ -2,12 +2,18 @@ import {Divider, Typography} from "antd";
 
 const {Title, Text} = Typography
 
-function TrackDescriptionComponent() {
+interface IProps {
+  description: string
+}
+
+function TrackDescriptionComponent({description}:IProps) {
   return (
     <div>
         <Title level={5}>Track Description</Title>
         <Divider />
-        <Text>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus dolore quod officia perspiciatis dolorum adipisci cum sapiente optio ducimus ad esse illum temporibus molestias est, molestiae quia ipsam quaerat unde!</Text>
+        <Text>
+          {description}
+        </Text>
     </div>
   )
 }

@@ -1,19 +1,27 @@
 import { Avatar, Button, Col, Row, Space, Typography } from 'antd'
 import { EyeOutlined, BookOutlined, ClockCircleOutlined } from "@ant-design/icons";
+import { IAuthor } from '../../../interface';
 const { Paragraph } = Typography;
 
-function TrackDataComponent() {
+interface IProps {
+    views: number,
+    noOfModules: number,
+    duration: number,
+    author: IAuthor
+}
+
+function TrackDataComponent({views,noOfModules,duration,author}:IProps) {
     return (
         <Row gutter={[16, 16]} align="middle" justify={"space-between"}>
             <Col span={4}>
-                <Paragraph><EyeOutlined /> Number of Views</Paragraph>
-                <Paragraph><BookOutlined /> Modules Length</Paragraph>
-                <Paragraph><ClockCircleOutlined /> Duration</Paragraph>
+                <Paragraph><EyeOutlined />Views: {views} </Paragraph>
+                <Paragraph><BookOutlined />Number of Modules: {noOfModules}</Paragraph>
+                <Paragraph><ClockCircleOutlined />Total Duration: {duration}s </Paragraph>
             </Col>
             <Col span={4}>
                 <Space direction="vertical">
-                    <Avatar src="https://joeschmoe.io/api/v1/cat" size={40} />
-                    <Paragraph>Author Name</Paragraph>
+                    <Avatar src={author.photo} size={60} />
+                    <Paragraph>{author.name}</Paragraph>
                 </Space>
             </Col>
             <Col span={4}>

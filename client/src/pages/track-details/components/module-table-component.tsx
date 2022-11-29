@@ -1,19 +1,10 @@
 import { Table } from 'antd';
 import Title from 'antd/es/typography/Title';
-import React from 'react';
+import { IModule } from '../../../interface';
 
-const dataSource = [
-    {
-      key: '1',
-      title: 'Module - 1',
-      length: 32,
-    },
-    {
-      key: '2',
-      title: 'Module - 2',
-      length: 42,
-    },
-  ];
+interface IProps {
+  modules: IModule[]
+}
   
   const columns = [
     {
@@ -28,11 +19,14 @@ const dataSource = [
     },
   ];
 
-function ModuleTableComponent() {
+function ModuleTableComponent({modules}:IProps) {
+
+  console.log(modules);
+
   return (
     <div>
          <Title level={5}>Modules</Title>
-         <Table dataSource={dataSource} columns={columns} pagination={false}/>
+         <Table dataSource={modules} columns={columns} pagination={false} rowKey={(record:IModule) => record.id} size="small"/>
     </div>
    
   )

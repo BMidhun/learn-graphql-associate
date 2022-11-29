@@ -1,28 +1,39 @@
 import { Card, Divider, Image, Space } from "antd"
+import { ITrack } from "../../../interface";
 
 import ModuleTableComponent from "./module-table-component"
 import TrackDataComponent from "./track-data-component";
 import TrackDescriptionComponent from "./track-description-component";
 
+interface IProps {
+    track:ITrack
+}
 
-function TrackDetailComponent() {
+
+function TrackDetailComponent({track}:IProps) {
     return (
-        <Space direction="vertical" size={"middle"} style={{ width: "80%", margin: "auto" }}>
+        <Space direction="vertical" size={"middle"} style={{ width: "80%", margin: "auto", paddingLeft:"100px" }}>
             <Image
                 alt="Track Thumbail.jpg"
-                src="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
+                src={track.thumbnail}
                 width={"100%"}
                 height={500}
+                style={{objectFit:"cover"}}
             />
 
-            <Card title="Track Title" bordered={false}>
-                <TrackDataComponent />
+            <Card title={track.title} bordered={false}>
+                <TrackDataComponent 
+                    author={track.author}
+                    duration={track.length}
+                    noOfModules={track.modulesCount}
+                    views={track.numberOfViews}
+                />
                 <Divider />
 
-                <ModuleTableComponent />
+                <ModuleTableComponent modules={track.modules}/>
             </Card>
 
-            <TrackDescriptionComponent />
+            <TrackDescriptionComponent description={track.description}/>
         </Space>
     )
 }
