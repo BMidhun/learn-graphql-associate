@@ -1,5 +1,5 @@
 import {Avatar, Layout, Typography, Space} from "antd";
-import {Outlet} from 'react-router-dom'
+import {NavLink, Outlet} from 'react-router-dom'
 
 import styles from "./layout.module.css";
 
@@ -11,7 +11,10 @@ function LayoutHOC() {
         <Layout className={styles.layout}>
               <Header className={styles.layoutHeader}>
                   <Space>
-                     <Avatar src="https://joeschmoe.io/api/v1/cat" size={50}></Avatar>
+                     <NavLink to="/home">
+                        <Avatar src="https://joeschmoe.io/api/v1/cat" size={50}></Avatar>
+                     </NavLink>
+                    
                      <Title level={2} style={{margin:"auto 0"}}>CatsAstro</Title>
                   </Space>
               

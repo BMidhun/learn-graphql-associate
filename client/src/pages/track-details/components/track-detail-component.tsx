@@ -12,7 +12,7 @@ interface IProps {
 
 function TrackDetailComponent({track}:IProps) {
     return (
-        <Space direction="vertical" size={"middle"} style={{ width: "80%", margin: "auto", paddingLeft:"100px" }}>
+        <Space direction="vertical" size={"middle"} style={{ width: "80%", margin: "auto", paddingLeft:"300px" }}>
             <Image
                 alt="Track Thumbail.jpg"
                 src={track.thumbnail}
