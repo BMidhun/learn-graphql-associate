@@ -12,7 +12,7 @@ interface IProps {
 
 function TrackComponent(props:IProps) {
 
-    const {track:{author:{name:authorName,photo}, id,length,modulesCount,thumbnail,title},onTrackSelect} = props
+    const {track:{author:{name:authorName,photo}, id,durationInSeconds,modulesCount,thumbnail,title},onTrackSelect} = props
 
     return (
         <Card style={{ width: 400 }} cover={<img src={thumbnail} alt="image not available" height={250}></img>} hoverable key={id} onClick={() => onTrackSelect(id)}>
@@ -24,7 +24,7 @@ function TrackComponent(props:IProps) {
                         <Text strong>{authorName}</Text>
                         <Space >
                         <Text type='secondary'>{modulesCount} modules</Text>
-                        <Text type='secondary'>{length} mins</Text>
+                        <Text type='secondary'>{durationInSeconds} mins</Text>
                         </Space>
     
                     </Space>

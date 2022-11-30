@@ -24,7 +24,7 @@ function TrackDetailComponent({track}:IProps) {
             <Card title={track.title} bordered={false}>
                 <TrackDataComponent 
                     author={track.author}
-                    duration={track.length}
+                    duration={track.durationInSeconds}
                     noOfModules={track.modulesCount}
                     views={track.numberOfViews}
                 />

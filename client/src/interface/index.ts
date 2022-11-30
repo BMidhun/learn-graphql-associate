@@ -6,7 +6,7 @@ export interface IAuthor{
 
 export interface IModule {
   id:string,
-  length:number,
+  durationInSeconds:number,
   title:string
 }
   
@@ -16,7 +16,7 @@ export interface ITrack {
     description:string,
     thumbnail: string,
     modulesCount: number,
-    length: number,
+    durationInSeconds: number,
     author: IAuthor,
     modules: IModule[],
     numberOfViews:number

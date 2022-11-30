@@ -16,7 +16,7 @@ function TrackDataComponent({views,noOfModules,duration,author}:IProps) {
             <Col span={4}>
                 <Paragraph><EyeOutlined />Views: {views} </Paragraph>
                 <Paragraph><BookOutlined />Number of Modules: {noOfModules}</Paragraph>
-                <Paragraph><ClockCircleOutlined />Total Duration: {duration}s </Paragraph>
+                <Paragraph><ClockCircleOutlined />Total Duration: {duration} </Paragraph>
             </Col>
             <Col span={4}>
                 <Space direction="vertical">

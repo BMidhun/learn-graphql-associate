@@ -13,9 +13,9 @@ interface IProps {
       key: 'title',
     },
     {
-      title: 'Length',
-      dataIndex: 'length',
-      key: 'length',
+      title: 'Duration in seconds',
+      dataIndex: 'durationInSeconds',
+      key: 'durationInSeconds',
     },
   ];
 

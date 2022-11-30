@@ -14,12 +14,12 @@ query GET_TRACK($trackId:ID!) {
    modulesCount
    modules {
      id
-     length
+     durationInSeconds
      title
      
    }
    description
-   length
+   durationInSeconds
    author {
      id
      name

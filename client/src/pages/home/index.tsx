@@ -12,7 +12,7 @@ query TracksForHome {
     title
     thumbnail
     modulesCount
-    length
+    durationInSeconds
     author {
       id
       name
