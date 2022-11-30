@@ -1,5 +1,6 @@
-import { gql, useQuery } from '@apollo/client'
+import { gql, useMutation, useQuery } from '@apollo/client'
 import { Col, Row } from 'antd';
+import { useNavigate } from 'react-router-dom';
 import QueryResult from '../../components/query-result';
 import { ITrack } from '../../interface';
 import TrackComponent from './components/track.component';
@@ -23,20 +24,49 @@ query TracksForHome {
 `;
 
 
+const INCREMENT_TRACKVIEWS = gql`
+mutation INCREMENT_TRACKVIEWS($trackId: ID!) {
+  incrementTrackViews(id: $trackId) {
+    code,
+    message,
+    success,
+    track {
+      id,
+      numberOfViews
+    }
+  }
+}
+`
+
+
 
 function Home() {
-  const {data, loading, error} = useQuery<{tracksForHome: ITrack[]}>(TRACKS);
-  console.log({data});
+  const navigate = useNavigate();
 
-  return <QueryResult data={data} error={error?.message} loading={loading}>
-            <Row gutter={[16,24]} wrap style={{paddingLeft:"90px"}}>
-            {data?.tracksForHome?.map((_track) => {
-               return <Col key={_track.id}><TrackComponent track={_track} /></Col>
-            })}
-            </Row>
-          
-      
-        </QueryResult>
+  const { data, loading, error } = useQuery<{ tracksForHome: ITrack[] }>(TRACKS);
+  const [incrementViews, { loading:updateLoading }] = useMutation(INCREMENT_TRACKVIEWS)
+
+  function onTrackSelect(id: string) {
+    incrementViews({
+      variables:{trackId:id},
+      onCompleted(data, clientOptions?) {
+        console.log("Reached")
+        navigate(`/${id}`);
+      },
+    })
+  }
+
+
+
+  return <QueryResult data={data} error={error?.message} loading={loading || updateLoading}>
+    <Row gutter={[16, 24]} wrap style={{ paddingLeft: "90px" }}>
+      {data?.tracksForHome?.map((_track) => {
+        return <Col key={_track.id}><TrackComponent track={_track} onTrackSelect={onTrackSelect}/></Col>
+      })}
+    </Row>
+
+
+  </QueryResult>
 }
 
 export default Home

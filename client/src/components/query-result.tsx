@@ -10,8 +10,9 @@ interface IProps<T> {
 }
 
 function renderContent<T>(data: T, loading: boolean, error: string,children:ReactNode) {
+    console.log(loading);
     if (loading)
-        <Spin size='large' />
+        return <Spin size='large' />
 
     if (error)
         return <Alert
@@ -22,7 +23,7 @@ function renderContent<T>(data: T, loading: boolean, error: string,children:Reac
         />
 
     if (!data)
-        <Alert
+        return <Alert
             message="Nothing To Display"
             description="No data was returned from the server"
             type="info"
