@@ -1,5 +1,6 @@
 import { Avatar, Card, Typography, Layout, Space, Divider } from 'antd'
 import { ITrack } from '../../../interface';
+import { convertToMinutes } from '../../../utils';
 
 const { Content } = Layout;
 const { Text } = Typography;
@@ -24,7 +25,7 @@ function TrackComponent(props:IProps) {
                         <Text strong>{authorName}</Text>
                         <Space >
                         <Text type='secondary'>{modulesCount} modules</Text>
-                        <Text type='secondary'>{durationInSeconds} mins</Text>
+                        <Text type='secondary'>{convertToMinutes(durationInSeconds)}</Text>
                         </Space>
     
                     </Space>
