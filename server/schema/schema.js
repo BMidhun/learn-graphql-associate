@@ -74,7 +74,7 @@ type IncrementTrackViewsResponse {
     "Message gives a concise information on the action status"
     message: String!
 
-    "The updated track"
+    "The updated track. The Track can be possibly null since chances are that mutation action can go south."
     track: Track
 
 }
