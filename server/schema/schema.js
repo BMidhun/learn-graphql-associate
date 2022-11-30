@@ -63,6 +63,26 @@ type Query {
     track(id: ID!) : Track
 }
 
+type IncrementTrackViewsResponse {
+
+    "code represents the HTTP code for the action"
+    code : Int!
+
+    "Success indicates whether the mutation action was successful or not"
+    success: Boolean!
+
+    "Message gives a concise information the action status"
+    message: String!
+
+    "The updated track"
+    track: Track!
+
+}
+
+type Mutation {
+    incrementTrackViews(id:ID!):
+}
+
 `;
 
 module.exports = typeDefs
