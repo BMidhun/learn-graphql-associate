@@ -24,8 +24,11 @@ type Track {
     numberOfViews: Int
 
     "The total duration of the track"
-    length: Int
-    
+    length: Int @deprecated(reason:"use durationInSeconds")
+
+    "The total duration of the track in seconds"
+    durationInSeconds: Int
+
     "The author of the track"
     author: Author!
 
@@ -36,11 +39,18 @@ type Track {
 "This type represents a module. A module is a lesson of a track. Multiple modules comprises a track"
 
 type Module {
+    "To uniquely identify a module"
     id: ID!
 
+    "Title of the module"
     title: String!
 
-    length : Int
+    "Total duration of the module"
+    length : Int @deprecated(reason:"use durationInSeconds")
+
+    "Total duration of the module in seconds"
+    durationInSeconds: Int
+
 }
 
 
