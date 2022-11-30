@@ -71,16 +71,16 @@ type IncrementTrackViewsResponse {
     "Success indicates whether the mutation action was successful or not"
     success: Boolean!
 
-    "Message gives a concise information the action status"
+    "Message gives a concise information on the action status"
     message: String!
 
     "The updated track"
-    track: Track!
+    track: Track
 
 }
 
 type Mutation {
-    incrementTrackViews(id:ID!):
+    incrementTrackViews(id:ID!): IncrementTrackViewsResponse!
 }
 
 `;
