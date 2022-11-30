@@ -1,6 +1,7 @@
 import { Table } from 'antd';
 import Title from 'antd/es/typography/Title';
 import { IModule } from '../../../interface';
+import { convertToMinutes } from '../../../utils';
 
 interface IProps {
   modules: IModule[]
@@ -15,7 +16,7 @@ interface IProps {
     {
       title: 'Duration in seconds',
       dataIndex: 'durationInSeconds',
-      key: 'durationInSeconds',
+      render:(duration:number) => convertToMinutes(duration)
     },
   ];
 
