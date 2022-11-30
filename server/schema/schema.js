@@ -80,6 +80,7 @@ type IncrementTrackViewsResponse {
 }
 
 type Mutation {
+    "To increment the views of a track."
     incrementTrackViews(id:ID!): IncrementTrackViewsResponse!
 }
 
