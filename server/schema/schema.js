@@ -56,11 +56,13 @@ type Module {
 
 "This type represents an author"
 type Author {
-
+    "To uniquely identify an author"
     id: ID!
     
+    "Author name"
     name: String!
     
+    "Author's avatar"
     photo:String
 }
 
