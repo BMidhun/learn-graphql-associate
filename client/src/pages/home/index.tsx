@@ -50,7 +50,6 @@ function Home() {
     incrementViews({
       variables:{trackId:id},
       onCompleted(data, clientOptions?) {
-        console.log("Reached")
         navigate(`/${id}`);
       },
     })

@@ -21,7 +21,6 @@ interface IProps {
 
 function ModuleTableComponent({modules}:IProps) {
 
-  console.log(modules);
 
   return (
     <div>

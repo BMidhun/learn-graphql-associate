@@ -10,7 +10,6 @@ interface IProps<T> {
 }
 
 function renderContent<T>(data: T, loading: boolean, error: string,children:ReactNode) {
-    console.log(loading);
     if (loading)
         return <Spin size='large' />
 

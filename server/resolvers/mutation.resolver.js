@@ -4,7 +4,6 @@ exports.mutationResolver = {
             const {id} = args;
             const {dataSources} = context;
 
-            console.log("Reached")
             const response = {};
 
             try {
