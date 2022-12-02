@@ -1,10 +1,14 @@
 import ReactPlayer from "react-player";
 
-function ModulePlayerComponent() {
+interface IProp {
+   videoUrl:string | undefined
+}
+
+function ModulePlayerComponent({videoUrl}:IProp) {
   return (
     <div>
        <ReactPlayer
-        url={"https://youtu.be/ImudUVWINXo"}
+        url={videoUrl}
         // controls={true}
         width="100%"
         height={"500px"}

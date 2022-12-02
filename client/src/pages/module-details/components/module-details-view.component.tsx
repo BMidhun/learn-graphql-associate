@@ -2,13 +2,23 @@ import {Divider, Typography} from 'antd';
 
 const {Title, Text} = Typography;
 
-function ModuleDetailsViewComponent() {
+interface IProps {
+  title:string | undefined,
+  content:string| undefined
+}
+
+function ModuleDetailsViewComponent({title,content}:IProps) {
+  if(!title || !content)
+    return null
+
   return (
-    <div style={{width:"70%", margin:"auto"}}>
-        <Title level={4}>Module Title</Title>
+    <div style={{width:"60%", margin:"auto"}}>
+        <Title level={4}>{title}</Title>
         <Divider></Divider>
         <Text>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo iure ut tempora. Reiciendis quae at hic mollitia illum velit eveniet fuga beatae assumenda, a minima ipsum esse ipsa. Culpa, harum!
+        {content.split("\n").map((i,key) => {
+            return <div key={key}>{i}</div>;
+        })}
         </Text>
     </div>
   )

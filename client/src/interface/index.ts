@@ -7,7 +7,9 @@ export interface IAuthor{
 export interface IModule {
   id:string,
   durationInSeconds:number,
-  title:string
+  title:string,
+  videoUrl:string,
+  content:string
 }
   
 export interface ITrack {
