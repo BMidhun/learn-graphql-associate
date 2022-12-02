@@ -1,0 +1,29 @@
+.moduleList{
+    background-color: rgb(29, 2, 17);
+    color: #eee;
+    height: 470px;
+    overflow: auto;
+}
+
+.moduleListItem{
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    color: #eee !important;
+}
+
+.moduleListSelectedItem {
+    background-color:  rgb(145, 10, 84);
+}
+
+.moduleListItemContainer{
+    width: 100%;
+    color: #eee;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+}
+
+.moduleListItemContainer:not(:last-child) {
+    border-bottom: 1px solid pink;
+}
