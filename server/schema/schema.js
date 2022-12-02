@@ -51,6 +51,12 @@ type Module {
     "Total duration of the module in seconds"
     durationInSeconds: Int
 
+    "Content of the module"
+    content: String
+
+    "URL pointing to the video content of the module"
+    videoUrl: String
+
 }
 
 
