@@ -79,6 +79,9 @@ type Query {
 
     "track resolver accepts id as an argument and returns the corresponding Track. If the track doesn't exist for the provided id, then null can be returned"
     track(id: ID!) : Track
+
+    "Get a module by id"
+    module(id: ID!) : Module
 }
 
 type IncrementTrackViewsResponse {
