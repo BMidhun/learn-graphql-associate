@@ -6,11 +6,12 @@ import TrackDataComponent from "./track-data-component";
 import TrackDescriptionComponent from "./track-description-component";
 
 interface IProps {
-    track:ITrack
+    track:ITrack,
+    onStartTrack: () => void
 }
 
 
-function TrackDetailComponent({track}:IProps) {
+function TrackDetailComponent({track,onStartTrack}:IProps) {
     return (
         <Space direction="vertical" size={"middle"} style={{ width: "80%", margin: "auto", paddingLeft:"300px" }}>
             <Image
@@ -27,6 +28,7 @@ function TrackDetailComponent({track}:IProps) {
                     duration={track.durationInSeconds}
                     noOfModules={track.modulesCount}
                     views={track.numberOfViews}
+                    onStartTrack={onStartTrack}
                 />
                 <Divider />
 

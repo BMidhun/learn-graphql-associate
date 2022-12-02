@@ -26,7 +26,7 @@ function ModuleListComponent( {modules,currentModuleId, trackTitle,selectModule}
         <List.Item key={item.id} className={item.id === currentModuleId ? style.moduleListSelectedItem  : style.moduleListItem}>
           <div className={style.moduleListItemContainer}>
             <PlayCircleOutlined size={100} style={{cursor:"pointer"}} onClick={() => selectModule(item.id)}/>
-            <Typography.Title level={5} style={{color:"#eee"}}>{item.title}</Typography.Title>
+            <Typography.Title level={5} ellipsis={true} style={{color:"#eee"}}>{item.title}</Typography.Title>
             <Typography.Text style={{color:"#eee"}}>{convertToMinutes(item.durationInSeconds)}</Typography.Text>
           </div>
         </List.Item>

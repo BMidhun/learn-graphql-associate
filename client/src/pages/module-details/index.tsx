@@ -43,7 +43,7 @@ function ModuleDetails() {
   const {data:moduleData, loading:moduleLoading, error:moduleError}= useQuery<{module:IModule}>(GET_MODULEINFO,{variables:{id: moduleId}})
 
   const selectModule = (id:string) => {
-    navigate(`/${trackId}/module/${id}`);
+    navigate(`/track/${trackId}/module/${id}`);
   }
 
   return (

@@ -1,5 +1,5 @@
 import { gql, useQuery } from "@apollo/client";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import QueryResult from "../../components/query-result";
 import { ITrack } from "../../interface";
 import TrackDetailComponent from "./components/track-detail-component";
@@ -32,14 +32,18 @@ query GET_TRACK($trackId:ID!) {
 function TrackDetail() {
 
   const {id} = useParams();
-
+  const navigate = useNavigate();
   const {loading, data, error} = useQuery<{track:ITrack}>(GET_TRACK,{variables:{trackId:id}});
 
   const track = data?.track;
 
+  function onStartTrack () {
+    navigate(`/track/${id}/module/${track.modules[0].id}`)
+  }
+
   return (
     <QueryResult data={track} loading={loading} error={error?.message}>
-      { track ? <TrackDetailComponent track={track}/> : null }
+      { track ? <TrackDetailComponent track={track} onStartTrack={onStartTrack}/> : null }
     </QueryResult>
   
   )

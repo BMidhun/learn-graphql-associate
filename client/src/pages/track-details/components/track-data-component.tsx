@@ -8,10 +8,11 @@ interface IProps {
     views: number,
     noOfModules: number,
     duration: number,
-    author: IAuthor
+    author: IAuthor,
+    onStartTrack: () => void
 }
 
-function TrackDataComponent({views,noOfModules,duration,author}:IProps) {
+function TrackDataComponent({views,noOfModules,duration,author,onStartTrack}:IProps) {
     return (
         <Row gutter={[16, 16]} align="middle" justify={"space-between"}>
             <Col span={4}>
@@ -26,7 +27,7 @@ function TrackDataComponent({views,noOfModules,duration,author}:IProps) {
                 </Space>
             </Col>
             <Col span={4}>
-                <Button type="primary">Start Track</Button>
+                <Button type="primary" onClick={onStartTrack}>Start Track</Button>
             </Col>
         </Row>
     )

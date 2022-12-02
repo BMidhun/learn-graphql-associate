@@ -15,8 +15,8 @@ function AppRoutes() {
                 <Routes>
                     <Route element={<LayoutHOC />}>
                         <Route path='/home' element={<Home />}></Route>
-                        <Route path='/:id' element={<TrackDetail />}></Route>
-                        <Route path="/:trackId/module/:moduleId" element={<ModuleDetails />}></Route>
+                        <Route path='/track/:id' element={<TrackDetail />}></Route>
+                        <Route path="/track/:trackId/module/:moduleId" element={<ModuleDetails />}></Route>
                     </Route>
 
                     <Route path='*' element={<Navigate to={"/home"} />} />

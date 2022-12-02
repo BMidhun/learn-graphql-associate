@@ -49,8 +49,8 @@ function Home() {
   function onTrackSelect(id: string) {
     incrementViews({
       variables:{trackId:id},
-      onCompleted(data, clientOptions?) {
-        navigate(`/${id}`);
+      onCompleted(data: any, clientOptions?: any) {
+        navigate(`/track/${id}`);
       },
     })
   }
@@ -59,7 +59,7 @@ function Home() {
 
   return <QueryResult data={data} error={error?.message} loading={loading || updateLoading}>
     <Row gutter={[16, 24]} wrap style={{ paddingLeft: "90px" }}>
-      {data?.tracksForHome?.map((_track) => {
+      {data?.tracksForHome?.map((_track: ITrack) => {
         return <Col key={_track.id}><TrackComponent track={_track} onTrackSelect={onTrackSelect}/></Col>
       })}
     </Row>
