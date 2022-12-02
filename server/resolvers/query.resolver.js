@@ -9,6 +9,12 @@ exports.queryResolver = {
             const { dataSources } = context;
             const { id } = args;
             return dataSources.trackAPI.getTrack(id);
+        },
+
+        module: (_, args, context) => {
+            const {id} = args;
+            const {dataSources} = context;
+            return dataSources.trackAPI.getModule(id);
         }
     },
 
